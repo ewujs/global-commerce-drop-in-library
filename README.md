@@ -33,6 +33,7 @@ $(async function() {
     if (res.source.state === 'chargeable' || res.source.state === 'pending_funds') {
       try {
         await DRGCDropin.applyPaymentToCart(res.source.id);
+        // Assume that Drop-in is placed on the confirmOrder page
         document.forms.CheckoutConfirmOrderForm.submit();
       } catch (error) {
         console.error(error);

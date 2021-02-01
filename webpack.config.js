@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'drgc-drop-in.js',
+    filename: 'drgc-dropin.js',
     path: path.resolve(__dirname, 'dist')
   },
   module: {

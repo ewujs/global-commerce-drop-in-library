@@ -69,7 +69,7 @@ export const getPaymentSession = async (siteId, pk) => {
     if (paymentSession && paymentSession.id) {
       return paymentSession;
     } else {
-      throw new Error('Please make the payment session is enabled for the site.');
+      throw new Error('Please make sure the payment session is enabled for the site.');
     }
   } catch (e) {
     console.error(e);

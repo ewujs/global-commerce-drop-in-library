@@ -19,6 +19,11 @@ DRGCDropin is a JavaScript library for utilizing Drop-in to complete a payment o
 <div id="YOUR_DROPIN_CONTAINER_ID"></div>
 ```
 #### Step 5: Initialize DigitalRiver.js with your public key
+```javascript
+const digitalriverJs = new DigitalRiver('YOUR_PUBLIC_API_KEY', {
+  'locale': 'en-US'
+});
+```
 #### Step 6: Initialize Drop-in by passing the parameters using the `init()` function
 The following table lists the parameters for the `init()` function.
 Field | Required | Description
@@ -33,8 +38,51 @@ successCallback | Content | The function called when the shopper has authorized 
 errorCallback | Content | The function called when an error has occurred.
 readyCallback | Content | The function called when Drop-in is ready for user interaction.
 cancelCallback | Content | The function called when the shopper cancels the payment process before authorizing payment.
+
+In the following example, you have already collected the customer's address information.
+```javascript
+await DRGCDropin.init({
+  siteId: 'SITE_ID',
+  apiKey: 'YOUR_PUBLIC_API_KEY',
+  digitalriverJs: digitalriverJs,
+  billingAddress: {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'test@digitalriver.com',
+    phoneNumber: '000-000-0000',
+    address: {
+        line1: '10380 Bren Road W',
+        line2: '',
+        city: 'Minnetonka',
+        state: 'MN',
+        postalCode: '55343',
+        country: 'US'
+    }
+  },
+  options: {
+    showComplianceSection: true,
+    showTermsOfSaleDisclosure: true,
+    button: {
+      type: 'submitOrder'
+    }
+  },
+  paymentMethodConfiguration: {
+    enabledPaymentMethods: ['creditCard']
+  },
+  successCallback: function(data) {},
+  errorCallback: function(data) {},
+  readyCallback: function(data) {},
+  cancelCallback: function(data) {}
+});
+```
 #### Step 7: Use the `createDropin()` function to create an instance of Drop-in
+```javascript
+DRGCDropin.createDropin();
+```
 #### Step 8: Place Drop-in on the page by passing YOUR_DROPIN_CONTAINER_ID using the `mount()` function
+```javascript
+DRGCDropin.mount('YOUR_DROPIN_CONTAINER_ID');
+```
 
 ## Examples
 

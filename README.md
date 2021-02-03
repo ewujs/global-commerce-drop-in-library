@@ -2,14 +2,22 @@
 DRGCDropin is a JavaScript library for utilizing Drop-in to complete a payment on a GC hosted site. Users don't need to take care of grabbing the payment session and attaching the source to the cart by using Commerce API.
 
 ## Usage
-#### Step 1: Include the library on your page
+#### Step 1: Include DigitalRiver.js on your page
+```html
+<script src="https://js.digitalriverws.com/v1/DigitalRiver.js"></script>
+```
+#### Step 2: Include the base Drop-in CSS file
+```html
+<link rel="stylesheet" href="https://js.digitalriverws.com/v1/css/DigitalRiver.css" type="text/css"/>
+```
+#### Step 3: Include the library on your page
 ```html
 <script src="dist/drgc-dropin.js"></script>
 ```
-#### Step 2: Initialize DigitalRiver.js with your public key
-#### Step 3: Initialize Drop-in by passing the parameters using the `init()` function
-#### Step 4: Use the `createDropin()` function to create an instance of Drop-in
-#### Step 5: Place Drop-in on the page by using the `mount()` function
+#### Step 4: Initialize DigitalRiver.js with your public key
+#### Step 5: Initialize Drop-in by passing the parameters using the `init()` function
+#### Step 6: Use the `createDropin()` function to create an instance of Drop-in
+#### Step 7: Place Drop-in on the page by using the `mount()` function
 
 ## Examples
 

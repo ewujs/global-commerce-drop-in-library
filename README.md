@@ -29,7 +29,7 @@ The following table lists the parameters for the `init()` function.
 Field | Required | Description
 --- | --- | ---
 siteId | Required | The site ID 
-apiKey | Required | Your public API Key
+apiKey | Required | Your public API key
 digitalriverJs | Required | An instance of the DigitalRiver.js object
 billingAddress | Required | The customer's billing address
 options | Optional | [Drop-in specific configuration options](https://docs.digitalriver.com/digital-river-api/payment-integrations-1/drop-in/drop-in-integration-guide#drop-in-options)

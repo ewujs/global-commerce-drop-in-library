@@ -16,6 +16,19 @@ DRGCDropin is a JavaScript library for utilizing Drop-in to complete a payment o
 ```
 #### Step 4: Initialize DigitalRiver.js with your public key
 #### Step 5: Initialize Drop-in by passing the parameters using the `init()` function
+The following table lists the parameters for the `init()` function.
+Field | Required | Description
+--- | --- | ---
+siteId | Required | The site ID 
+apiKey | Required | Your public API Key
+digitalriverJs | Required | An instance of the DigitalRiver.js object
+billingAddress | Required | The customer's billing address
+options | Optional | [Drop-in specific configuration options](https://docs.digitalriver.com/digital-river-api/payment-integrations-1/drop-in/drop-in-integration-guide#drop-in-options)
+paymentMethodConfiguration | Optional | [Configuring payment methods within Drop-in](https://docs.digitalriver.com/digital-river-api/payment-integrations-1/drop-in/drop-in-integration-guide#configuring-payment-methods-within-drop-in)
+successCallback | Content | The function called when the shopper has authorized payment and a payment source has been successfully created. Returns a Source object.
+errorCallback | Content | The function called when an error has occurred.
+readyCallback | Content | The function called when Drop-in is ready for user interaction.
+cancelCallback | Content | The function called when the shopper cancels the payment process before authorizing payment.
 #### Step 6: Use the `createDropin()` function to create an instance of Drop-in
 #### Step 7: Place Drop-in on the page by using the `mount()` function
 
